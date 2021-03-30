@@ -1,12 +1,9 @@
 const editJsonFile = require('edit-json-file');
 const SETTINGS_FILE = 'neutralino.config.json';
 
-module.exports.update = (key, value, appName) => {
+module.exports.update = (key, value) => {
     let file;
-    if(appName)
-        file = editJsonFile(`${appName}/${SETTINGS_FILE}`);
-    else
-        file = editJsonFile(SETTINGS_FILE);
+    file = editJsonFile(SETTINGS_FILE);
     file.set(key, value);
     file.save();
 };
