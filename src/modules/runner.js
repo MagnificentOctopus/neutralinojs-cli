@@ -8,15 +8,15 @@ module.exports.runApp = (settingsObj, runSuccessCallback = null, argsOpt = "") =
         args += " " + argsOpt;
     switch (process.platform) {
         case 'win32':
-            binaryCmd = `${settingsObj.appname}-win.exe${args}`;
+            binaryCmd = `neutralino-win.exe${args}`;
             break;
         case 'linux':
-            binaryCmd = `./${settingsObj.appname}-linux${args}`;
-            chmod(`${settingsObj.appname}-linux`, 777);
+            binaryCmd = `./neutralino-linux${args}`;
+            chmod(`neutralino-linux`, 777);
             break;
         case 'darwin':
-            binaryCmd = `./${settingsObj.appname}-mac${args}`;
-            chmod(`${settingsObj.appname}-mac`, 777);
+            binaryCmd = `./neutralino-mac${args}`;
+            chmod(`neutralino-mac`, 777);
             break;
     }
     exec(binaryCmd, (err, stdout, stderr) => {
