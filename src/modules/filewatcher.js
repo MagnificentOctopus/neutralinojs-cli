@@ -2,8 +2,8 @@ const fs = require('fs');
 const chokidar = require('chokidar');
 const devServer = require('./devserver');
 const bundler = require('../modules/bundler');
-const APP_PATH = 'app';
-const APP_SOURCE_PATH = 'src';
+const APP_PATH = './app';
+const APP_SOURCE_PATH = './app/js';
 
 let watcher = null;
 let appSourceWatcher = null;
